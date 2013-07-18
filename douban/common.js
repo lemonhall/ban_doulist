@@ -1,0 +1,1 @@
+$(".status-item[data-action=1026]").hide();

@@ -1,0 +1,35 @@
+﻿{
+  "name" : "添加豆列屏蔽1号",
+  "manifest_version": 2,
+  "version" : "0.3",
+  "description" : "屏蔽掉豆瓣新功能---添加到豆列XXXXX",
+  "browser_action": {
+      "default_icon": "doubanicon-24.png",
+      "default_title": "屏蔽掉豆瓣新功能---添加到豆列XXXXX"
+  },
+  "icons": { "16": "icon-voice-16.png",
+           "48": "icon-voice-48.png",
+          "128": "icon-voice-128.png" },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.douban.com/update/*",
+        "http://www.douban.com/people/lemonhall2012/*"
+      ],
+      "js" : ["lib/jquery-1.7.2.min.js",
+              "douban/common.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+    "permissions": [
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "background",
+        "unlimitedStorage",
+        "http://www.douban.com/*",
+        "http://www.douban.com/people/*",
+        "http://api.douban.com/people/*"
+    ] 
+}
